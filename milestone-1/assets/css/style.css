@@ -47,11 +47,28 @@ body {
   border-left: 0.5px solid #dedede;
 }
 
+.top_bar > span {
+  height: 100%;
+}
+
+.top_bar > span > img {
+  height: 80%;
+  border-radius: 50%;
+  margin: 0 10px;
+}
+
+.top_bar > span > span > span {
+  color: #73838e;
+}
+
+.top_bar > span > i {
+  color: #b1b1b2;
+  font-size: 25px;
+  margin-right: 20px;
+}
+
 .bottom_bar {
   background-color: #f3eeea;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
 }
 
 .bottom_bar > i {
