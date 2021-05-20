@@ -91,6 +91,30 @@ body {
   border-right: 0.5px solid #dedede;
 }
 
+.user_name > span {
+  height: 100%;
+}
+
+.user_name > span > img {
+  height: 80%;
+  border-radius: 50%;
+  margin: 0 10px;
+}
+
+.user_name > span > span > span {
+  color: #73838e;
+}
+
+.user_name > span > i {
+  color: #b1b1b2;
+  font-size: 25px;
+  margin-right: 15px;
+}
+
+.user_name > span > h5 {
+  font-size: 18px;
+}
+
 .notifiche {
   background-color: #8edafc;
 }
