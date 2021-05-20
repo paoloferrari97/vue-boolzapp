@@ -54,24 +54,32 @@ body {
 
 .sent {
   background-color: #d5f9ba;
-  /* width: 40%; */
   display: inline-block;
   border-radius: 10px;
   padding: 20px;
   font-weight: 600;
   margin-bottom: 20px;
   margin-right: 10%;
+  min-width: 200px;
 }
 
 .received {
   background-color: white;
-  /* width: 40%; */
   display: inline-block;
   border-radius: 10px;
   padding: 20px;
   font-weight: 600;
   margin-bottom: 20px;
   margin-left: 10%;
+  min-width: 200px;
+}
+
+.data_ora {
+  font-size: 12px;
+  font-weight: 600;
+  bottom: 5px;
+  right: 5px;
+  color: #c6cee2;
 }
 
 .top_bar {
