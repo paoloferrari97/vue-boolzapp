@@ -7,9 +7,15 @@
 body {
   height: 100vh;
   width: 100vw;
-  background: linear-gradient(180deg, #009688 0%, #d9dbd5 20%);
   padding-top: 50px;
   padding-bottom: 50px;
+  background-color: linear-gradient(
+    to bottom,
+    #009688 0px,
+    #009688 25vh,
+    #dddbd1 25vh,
+    #d2dbdc 100%
+  );
 }
 
 #app {
@@ -166,4 +172,15 @@ body {
   border: 0;
   outline: none;
   width: calc(90% - 40px);
+}
+
+.lista_contatti > div {
+  margin-top: 10px;
+}
+
+.lista_contatti > div > img {
+  height: 60px;
+  border-radius: 50%;
+  margin-left: 20px;
+  margin-right: 20px;
 }
