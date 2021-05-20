@@ -49,8 +49,8 @@
                         <input type="text" placeholder="Cerca o inizia una nuova chat">
                     </div>
                     <div class="lista_contatti">
-                        <div class="d-flex align-items-center" v-for="(contact, index) in contacts">
-                            <img src="./assets/img/avatar_1.jpg">
+                        <div class="d-flex align-items-center" v-for="(contact, index) in contacts" @click="selezionaChat(index)">
+                            <img :src="'./assets/img/avatar' + contact.avatar + '.jpg'">
                             <h5>{{contact.name}}</h5>
                         </div>
                     </div>
@@ -66,9 +66,9 @@
                 <!-- top bar -->
                 <div class="top_bar d-flex justify-content-between align-items-center">
                     <span class="d-flex align-items-center">
-                        <img src="./assets/img/avatar_1.jpg">
+                        <img :src="'./assets/img/avatar' + chatSelezionata.avatar + '.jpg'">
                         <span>
-                            <h5 class="mb-1">{{chatSelezionata.name}}}</h5>
+                            <h5 class="mb-1">{{chatSelezionata.name}}</h5>
                             <span class="mt-0">Ultimo accesso oggi alle</span>
                         </span>
                     </span>

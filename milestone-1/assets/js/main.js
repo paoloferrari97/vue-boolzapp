@@ -120,7 +120,7 @@ const app = new Vue({
     },
     methods: {
         selezionaChat(index) {
-            this.chatSelezionata = {};
+            this.chatSelezionata = this.contacts[index];
         }
     }
 });
