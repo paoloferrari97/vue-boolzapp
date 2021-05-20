@@ -10,91 +10,92 @@
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body>
-    
-    <div id="app">
+    <div class="container">
+        <div id="app">
 
-        <!-- side bar -->
-        <div class="float-left h-100 side_bar">
+            <!-- side bar -->
+            <div class="float-left h-100 side_bar">
 
-            <!-- user name -->
-            <div class="user_name d-flex justify-content-between align-items-center">
-                <span class="d-flex align-items-center">
-                    <img src="./assets/img/avatar_io.jpg">
-                    <h5 class="mb-1">Nome Utente</h5>
-                </span>
-                <span class="d-flex align-items-center">
-                    <i class="fas fa-circle-notch"></i>
-                    <i class="fas fa-comment-alt"></i>
-                    <i class="fas fa-ellipsis-v"></i>
-                </span>
-            </div>
-            <!-- /user name -->
-            
-            <!-- notifiche -->
-            <div class="notifiche d-flex align-items-center justify-content-around">
-                <span class="d-flex align-items-center justify-content-center"><i class="fas fa-bell-slash"></i></span>
-                <span>
-                    <h6 class="mb-1">Ricevi le notifiche di nuovi messaggi</h6>
-                    <span class="mt-0">Attiva le notifiche desktop</span>
-                </span>
-            </div>
-            <!-- /notifiche -->
-
-            <!-- contatti -->
-            <div class="contatti">
-                <div class="cerca_contatto d-flex align-items-center justify-content-center">
-                    <div class="d-flex justify-content-center align-items-center">
-                        <i class="fas fa-search"></i>
-                    </div>
-                    <input type="text" placeholder="Cerca o inizia una nuova chat">
-                </div>
-                <div class="lista_contatti">
-                    <div class="d-flex align-items-center">
-                        <img src="./assets/img/avatar_1.jpg">
-                        <h5>Michele</h5>
-                    </div>
-                </div>
-            </div>
-            <!-- /contatti -->
-
-        </div>
-        <!-- /side bar -->
-
-        <!-- main content -->
-        <div class="float-left h-100 main_content">
-
-            <!-- top bar -->
-            <div class="top_bar d-flex justify-content-between align-items-center">
-                <span class="d-flex align-items-center">
-                    <img src="./assets/img/avatar_1.jpg">
-                    <span>
-                        <h5 class="mb-1">Michele</h5>
-                        <span class="mt-0">Ultimo accesso oggi alle</span>
+                <!-- user name -->
+                <div class="user_name d-flex justify-content-between align-items-center">
+                    <span class="d-flex align-items-center">
+                        <img src="./assets/img/avatar_io.jpg">
+                        <h5 class="mb-1">Nome Utente</h5>
                     </span>
-                </span>
-                <span class="d-flex align-items-center">
-                    <i class="fas fa-search"></i>
-                    <i class="fas fa-paperclip"></i>
-                    <i class="fas fa-ellipsis-v"></i>
-                </span>
-            </div>
-            <!-- top bar -->
+                    <span class="d-flex align-items-center">
+                        <i class="fas fa-circle-notch"></i>
+                        <i class="fas fa-comment-alt"></i>
+                        <i class="fas fa-ellipsis-v"></i>
+                    </span>
+                </div>
+                <!-- /user name -->
+                
+                <!-- notifiche -->
+                <div class="notifiche d-flex align-items-center justify-content-around">
+                    <span class="d-flex align-items-center justify-content-center"><i class="fas fa-bell-slash"></i></span>
+                    <span>
+                        <h6 class="mb-1">Ricevi le notifiche di nuovi messaggi</h6>
+                        <span class="mt-0">Attiva le notifiche desktop</span>
+                    </span>
+                </div>
+                <!-- /notifiche -->
 
-            <!-- main -->
-            <div class="main"></div>
-            <!-- /main -->
+                <!-- contatti -->
+                <div class="contatti">
+                    <div class="cerca_contatto d-flex align-items-center justify-content-center">
+                        <div class="d-flex justify-content-center align-items-center">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <input type="text" placeholder="Cerca o inizia una nuova chat">
+                    </div>
+                    <div class="lista_contatti">
+                        <div class="d-flex align-items-center" v-for="(contact, index) in contacts">
+                            <img src="./assets/img/avatar_1.jpg">
+                            <h5>{{contact.name}}</h5>
+                        </div>
+                    </div>
+                </div>
+                <!-- /contatti -->
 
-            <!-- bottom bar -->
-            <div class="bottom_bar d-flex justify-content-around align-items-center">
-                <i class="far fa-smile"></i>
-                <input type="text" placeholder="Scrivi un messaggio">
-                <i class="fas fa-microphone"></i>
             </div>
-            <!-- /bottom bar -->
+            <!-- /side bar -->
+
+            <!-- main content -->
+            <div class="float-left h-100 main_content">
+
+                <!-- top bar -->
+                <div class="top_bar d-flex justify-content-between align-items-center">
+                    <span class="d-flex align-items-center">
+                        <img src="./assets/img/avatar_1.jpg">
+                        <span>
+                            <h5 class="mb-1">{{chatSelezionata.name}}}</h5>
+                            <span class="mt-0">Ultimo accesso oggi alle</span>
+                        </span>
+                    </span>
+                    <span class="d-flex align-items-center">
+                        <i class="fas fa-search"></i>
+                        <i class="fas fa-paperclip"></i>
+                        <i class="fas fa-ellipsis-v"></i>
+                    </span>
+                </div>
+                <!-- top bar -->
+
+                <!-- main -->
+                <div class="main"></div>
+                <!-- /main -->
+
+                <!-- bottom bar -->
+                <div class="bottom_bar d-flex justify-content-around align-items-center">
+                    <i class="far fa-smile"></i>
+                    <input type="text" placeholder="Scrivi un messaggio">
+                    <i class="fas fa-microphone"></i>
+                </div>
+                <!-- /bottom bar -->
+
+            </div>
+            <!-- /main content -->
 
         </div>
-        <!-- /main content -->
-
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
