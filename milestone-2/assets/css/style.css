@@ -213,3 +213,7 @@ body {
   margin-right: 20px;
   overflow-y: auto;
 }
+
+.contatto:hover {
+  background-color: #e9ebeb;
+}
