@@ -125,11 +125,28 @@ const app = new Vue({
                         status: 'received'
                     }
                 ],
-        }
+        },
+        nuovoMessaggio: "",
+        counter: 0
+        
     },
     methods: {
         selezionaChat(index) {
             this.chatSelezionata = this.contacts[index];
+            this.counter = index;
+        },
+        inviaMessaggio(event) {
+            const d = new Date();
+            let data = d.getDate() + "/" + (d.getMonth() + 1) + "/" + d.getFullYear() + " " + d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds();
+            if (event.key == "Enter" && this.nuovoMessaggio != "") {
+                this.contacts[this.counter].messages.push({
+                    date: data,
+                    text: this.nuovoMessaggio,
+                    status: 'sent'
+                });
+                this.nuovoMessaggio = "";
+                this.chatSelezionata = this.contacts[this.counter];
+            }
         }
     }
 });
