@@ -81,7 +81,11 @@
                 <!-- top bar -->
 
                 <!-- main -->
-                <div class="main"></div>
+                <div class="main">
+                    <div class="messaggio" v-for="(message, index) in chatSelezionata.messages">
+                        {{message.text}}
+                    </div>
+                </div>
                 <!-- /main -->
 
                 <!-- bottom bar -->
