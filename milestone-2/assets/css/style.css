@@ -49,6 +49,29 @@ body {
 
 .main {
   background-image: url("../img/mine.jpg");
+  padding-top: 30px;
+}
+
+.sent {
+  background-color: #d5f9ba;
+  /* width: 40%; */
+  display: inline-block;
+  border-radius: 10px;
+  padding: 20px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  margin-right: 10%;
+}
+
+.received {
+  background-color: white;
+  /* width: 40%; */
+  display: inline-block;
+  border-radius: 10px;
+  padding: 20px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  margin-left: 10%;
 }
 
 .top_bar {

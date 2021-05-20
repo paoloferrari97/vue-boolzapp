@@ -82,8 +82,8 @@
 
                 <!-- main -->
                 <div class="main">
-                    <div class="messaggio" v-for="(message, index) in chatSelezionata.messages">
-                        {{message.text}}
+                    <div class="messaggio d-flex" v-for="(message, index) in chatSelezionata.messages" :class="(message.status == 'sent') ? 'justify-content-end' : 'justify-content-start'">
+                        <div :class="chatSelezionata.messages[index].status">{{message.text}}</div>
                     </div>
                 </div>
                 <!-- /main -->
