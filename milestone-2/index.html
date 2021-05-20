@@ -46,7 +46,7 @@
                         <div class="d-flex justify-content-center align-items-center">
                             <i class="fas fa-search"></i>
                         </div>
-                        <input type="text" placeholder="Cerca o inizia una nuova chat">
+                        <input type="text" placeholder="Cerca o inizia una nuova chat" v-model="cerca">
                     </div>
                     <div class="lista_contatti">
                         <div class="d-flex align-items-center contatto" v-for="(contact, index) in contacts" @click="selezionaChat(index)">

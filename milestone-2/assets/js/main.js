@@ -127,7 +127,8 @@ const app = new Vue({
                 ],
         },
         nuovoMessaggio: "",
-        counter: 0
+        counter: 0,
+        cerca: ""
         
     },
     methods: {
