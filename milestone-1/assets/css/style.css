@@ -144,3 +144,26 @@ body {
 .contatti {
   background-color: white;
 }
+
+.cerca_contatto {
+  background-color: #fafafa;
+  height: 50px;
+}
+
+.cerca_contatto > div:first-child {
+  height: 70%;
+  width: 40px;
+  background-color: white;
+}
+
+.cerca_contatto > div:first-child > i {
+  font-size: 20px;
+  color: #b1b1b2;
+}
+
+.cerca_contatto > input {
+  height: 70%;
+  border: 0;
+  outline: none;
+  width: calc(90% - 40px);
+}
