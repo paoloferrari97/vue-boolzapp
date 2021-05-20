@@ -95,6 +95,28 @@ body {
   background-color: #8edafc;
 }
 
+.notifiche > span:first-child {
+  background-color: white;
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+}
+
+.notifiche > span > i {
+  font-size: 20px;
+  color: #8edafc;
+}
+
+.notifiche > span > h6 {
+  font-size: 15px;
+}
+
+.notifiche > span > span {
+  font-size: 14px;
+  text-decoration: underline;
+  color: #73838e;
+}
+
 .contatti {
   background-color: white;
 }
