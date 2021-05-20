@@ -50,6 +50,7 @@ body {
 .main {
   background-image: url("../img/mine.jpg");
   padding-top: 30px;
+  overflow-y: auto;
 }
 
 .sent {

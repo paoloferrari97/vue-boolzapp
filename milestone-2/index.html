@@ -81,7 +81,7 @@
                 <!-- top bar -->
 
                 <!-- main -->
-                <div class="main">
+                <div id="main" class="main">
                     <div class="messaggio d-flex" v-for="(message, index) in chatSelezionata.messages" :class="(message.status == 'sent') ? 'justify-content-end' : 'justify-content-start'">
                         <div class="position-relative" :class="chatSelezionata.messages[index].status">
                             {{message.text}}
