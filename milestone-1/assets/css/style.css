@@ -1,0 +1,41 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  background: linear-gradient(180deg, #009688 0%, #d9dbd5 20%);
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+#app {
+  width: 80%;
+  margin: auto;
+  height: 100%;
+}
+
+.side_bar {
+  width: 30%;
+}
+
+.main_content {
+  width: 70%;
+}
+
+.top_bar,
+.bottom_bar,
+.user_name,
+.notifiche {
+  height: 15%;
+  background-color: pink;
+}
+
+.main,
+.contatti {
+  height: 70%;
+  background-color: yellow;
+}
