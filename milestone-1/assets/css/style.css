@@ -31,11 +31,53 @@ body {
 .user_name,
 .notifiche {
   height: 15%;
-  background-color: pink;
 }
 
 .main,
 .contatti {
   height: 70%;
-  background-color: yellow;
+}
+
+.main {
+  background-image: url("../img/mine.jpg");
+}
+
+.top_bar {
+  background-color: #eaeaea;
+  border-left: 0.5px solid #dedede;
+}
+
+.bottom_bar {
+  background-color: #f3eeea;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.bottom_bar > i {
+  color: #6b7376;
+  font-size: 30px;
+  margin: 0 20px;
+}
+
+.bottom_bar > input {
+  border: 0;
+  width: 100%;
+  height: 70%;
+  padding-left: 20px;
+  border-radius: 10px;
+  outline: none;
+}
+
+.user_name {
+  background-color: #eaeaea;
+  border-right: 0.5px solid #dedede;
+}
+
+.notifiche {
+  background-color: #8edafc;
+}
+
+.contatti {
+  background-color: white;
 }
