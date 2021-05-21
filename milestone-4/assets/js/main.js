@@ -115,7 +115,7 @@ const app = new Vue({
                         status: 'received'
                     }
                 ],
-            },
+            }
         ],
         chatSelezionata: {
             name: 'Michele',
