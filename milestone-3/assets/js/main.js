@@ -160,7 +160,7 @@ const app = new Vue({
                 this.nuovoMessaggio = "";
                 this.chatSelezionata = this.contacts[this.counter];
                 this.rispostaMessaggio();
-                //this.updateScroll();
+                this.updateScroll();
             }
         },
         rispostaMessaggio() {
@@ -175,10 +175,10 @@ const app = new Vue({
                 this.chatSelezionata = this.contacts[this.counter];
             }, 1000);
         },
-        /* updateScroll(){
+        updateScroll(){
             var element = document.getElementById("main");
             element.scrollTop = element.scrollHeight;
-        } */
+        }
         //Funziona solo se la richiamo in inviaMessaggio() e però non va bene fino in fondo (1 msg lo nasconde sotto)
     }
 });
