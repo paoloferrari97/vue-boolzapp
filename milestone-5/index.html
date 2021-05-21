@@ -66,9 +66,9 @@
                 <!-- top bar -->
                 <div class="top_bar d-flex justify-content-between align-items-center">
                     <span class="d-flex align-items-center">
-                        <img :src="'./assets/img/avatar' + chatSelezionata.avatar + '.jpg'">
+                        <img :src="'./assets/img/avatar' + contacts[counter].avatar + '.jpg'">
                         <span>
-                            <h5 class="mb-1">{{chatSelezionata.name}}</h5>
+                            <h5 class="mb-1">{{contacts[counter].name}}</h5>
                             <span class="mt-0">Ultimo accesso oggi alle</span>
                         </span>
                     </span>
@@ -82,10 +82,14 @@
 
                 <!-- main -->
                 <div id="main" class="main">
-                    <div class="messaggio d-flex" v-for="(message, index) in chatSelezionata.messages" :class="(message.status == 'sent') ? 'justify-content-end' : 'justify-content-start'">
-                        <div class="position-relative" :class="chatSelezionata.messages[index].status">
+                    <div class="messaggio d-flex position-relative" v-for="(message, index) in contacts[counter].messages" :class="(message.status == 'sent') ? 'justify-content-end' : 'justify-content-start'">
+                        <div class="position-relative" :class="contacts[counter].messages[index].status" @click="opzioniMessaggi(index)">
                             {{message.text}}
                             <span class="position-absolute data_ora">{{message.date}}</span>
+                            <div class="opzioni_messaggi position-absolute" :class="'opzioni' + index">
+                                <div class="h-50 d-flex justify-content-center align-items-center">Message info</div>
+                                <div class="h-50 d-flex justify-content-center align-items-center" @click="eliminaMessaggio(index)">Delete message</div>
+                            </div>
                         </div>
                     </div>
                 </div>

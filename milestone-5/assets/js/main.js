@@ -28,6 +28,13 @@
 //contatti il cui nome contiene le lettere inserite (es, Marco, Matteo Martina -> Scrivo 
 //“mar” rimangono solo Marco e Martina)
 
+
+//Milestone 5 - opzionale
+//Cancella messaggio: cliccando sul messaggio appare un menu a tendina che
+//permette di cancellare il messaggio selezionato
+
+//Visualizzazione ora e ultimo messaggio inviato / ricevuto nella lista dei contatti
+
 const app = new Vue({
     el: "#app",
     data: {
@@ -117,28 +124,6 @@ const app = new Vue({
                 ],
             }
         ],
-        chatSelezionata: {
-            name: 'Michele',
-                avatar: '_1',
-                visible: true,
-                messages: [
-                    {
-                        date: '10/01/2020 15:30:55',
-                        text: 'Hai portato a spasso il cane?',
-                        status: 'sent'
-                    },
-                    {
-                        date: '10/01/2020 15:50:00',
-                        text: 'Ricordati di dargli da mangiare',
-                        status: 'sent'
-                    },
-                    {
-                        date: '10/01/2020 16:15:22',
-                        text: 'Tutto fatto!',
-                        status: 'received'
-                    }
-                ],
-        },
         nuovoMessaggio: "",
         counter: 0,
         cerca: "",
@@ -151,7 +136,6 @@ const app = new Vue({
     },
     methods: {
         selezionaChat(index) {
-            this.chatSelezionata = this.contacts[index];
             this.counter = index;
         },
         inviaMessaggio(event) {
@@ -164,7 +148,6 @@ const app = new Vue({
                     status: 'sent'
                 });
                 this.nuovoMessaggio = "";
-                this.chatSelezionata = this.contacts[this.counter];
                 this.rispostaMessaggio();
             }
         },
@@ -177,13 +160,20 @@ const app = new Vue({
                     text: "Ok",
                     status: 'received'
                 });
-                this.chatSelezionata = this.contacts[this.counter];
-                this.updateScroll();
             }, 1000);
         },
         updateScroll(){
             var element = document.getElementById("main");
             element.scrollTop = element.scrollHeight;
-        } //Funziona solo se la richiamo in inviaMessaggio() o rispostaMessaggio() e però non va bene fino in fondo (1 msg lo nasconde sotto)
+        }, //Funziona solo se la richiamo in inviaMessaggio() o rispostaMessaggio() e però non va bene fino in fondo (1 msg lo nasconde sotto)
+        opzioniMessaggi(index) {
+            document.querySelector(`.opzioni${index}`).style.display = "block";
+            setTimeout(() => {
+            document.querySelector(`.opzioni${index}`).style.display = "none";
+            }, 5000);
+        },
+        eliminaMessaggio(index) {
+            this.contacts[this.counter].messages.splice(index, 1);
+        }
     }
 });

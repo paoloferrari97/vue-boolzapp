@@ -55,6 +55,17 @@ body {
   overflow-y: auto;
 }
 
+.opzioni_messaggi {
+  width: 200px;
+  height: 100px;
+  background-color: white;
+  z-index: 1;
+  right: 20px;
+  box-shadow: 2px 2px 2px grey;
+  border: 0.5px solid grey;
+  display: none;
+}
+
 .sent {
   background-color: #d5f9ba;
   display: inline-block;
