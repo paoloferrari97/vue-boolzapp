@@ -25,6 +25,7 @@ body {
   width: 100%;
   margin: auto;
   height: 100%;
+  max-width: 1440px;
 }
 
 .side_bar {
@@ -62,6 +63,8 @@ body {
   margin-bottom: 20px;
   margin-right: 10%;
   min-width: 200px;
+  max-width: 400px;
+  word-wrap: break-word;
 }
 
 .received {
@@ -73,6 +76,8 @@ body {
   margin-bottom: 20px;
   margin-left: 10%;
   min-width: 200px;
+  max-width: 400px;
+  word-wrap: break-word;
 }
 
 .data_ora {

@@ -128,7 +128,12 @@ const app = new Vue({
         },
         nuovoMessaggio: "",
         counter: 0,
-        cerca: ""
+        cerca: "",
+        me: {
+            name: "Me",
+            avatar: "_io",
+            visible: true
+        }
         
     },
     methods: {
