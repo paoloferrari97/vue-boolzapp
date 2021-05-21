@@ -160,7 +160,6 @@ const app = new Vue({
                 this.nuovoMessaggio = "";
                 this.chatSelezionata = this.contacts[this.counter];
                 this.rispostaMessaggio();
-                this.updateScroll();
             }
         },
         rispostaMessaggio() {
@@ -173,12 +172,13 @@ const app = new Vue({
                     status: 'received'
                 });
                 this.chatSelezionata = this.contacts[this.counter];
+                this.updateScroll();
             }, 1000);
         },
         updateScroll(){
             var element = document.getElementById("main");
             element.scrollTop = element.scrollHeight;
         }
-        //Funziona solo se la richiamo in inviaMessaggio() e però non va bene fino in fondo (1 msg lo nasconde sotto)
+        //Funziona solo se la richiamo in inviaMessaggio() o rispostaMessaggio() e però non va bene fino in fondo (1 msg lo nasconde sotto)
     }
 });
