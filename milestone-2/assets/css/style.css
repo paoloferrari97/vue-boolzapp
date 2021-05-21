@@ -40,7 +40,8 @@ body {
 .bottom_bar,
 .user_name,
 .notifiche {
-  height: 15%;
+  /* height: 15%; */
+  height: calc(20vh - 50px);
 }
 
 .main,
