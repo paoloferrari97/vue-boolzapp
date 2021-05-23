@@ -63,7 +63,6 @@ body {
   right: 20px;
   box-shadow: 2px 2px 2px grey;
   border: 0.5px solid grey;
-  display: none;
 }
 
 .sent {
@@ -96,6 +95,14 @@ body {
   font-size: 12px;
   font-weight: 600;
   bottom: 5px;
+  right: 5px;
+  color: #c6cee2;
+}
+
+.menu_opzioni_msg {
+  font-size: 15px;
+  font-weight: 600;
+  top: 5px;
   right: 5px;
   color: #c6cee2;
 }

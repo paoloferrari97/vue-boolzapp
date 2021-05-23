@@ -128,10 +128,11 @@ const app = new Vue({
         counter: 0,
         cerca: "",
         me: {
-            name: "Me",
+            name: "Tu",
             avatar: "_io",
             visible: true
-        }
+        },
+        mostraOpzioni: false
         
     },
     methods: {
@@ -166,14 +167,9 @@ const app = new Vue({
             var element = document.getElementById("main");
             element.scrollTop = element.scrollHeight;
         }, //Funziona solo se la richiamo in inviaMessaggio() o rispostaMessaggio() e però non va bene fino in fondo (1 msg lo nasconde sotto)
-        opzioniMessaggi(index) {
-            document.querySelector(`.opzioni${index}`).style.display = "block";
-            setTimeout(() => {
-            document.querySelector(`.opzioni${index}`).style.display = "none";
-            }, 5000);
-        },
         eliminaMessaggio(index) {
             this.contacts[this.counter].messages.splice(index, 1);
+            this.mostraOpzioni = false;
         }
     }
 });
