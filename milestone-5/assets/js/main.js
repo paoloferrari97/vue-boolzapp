@@ -189,7 +189,7 @@ const app = new Vue({
             setTimeout(() => {
                 var element = document.getElementById("main");
                 element.scrollTop = element.scrollHeight;
-            }, 1000);
+            }, 100);
         }, //Funziona solo se la richiamo in inviaMessaggio() o rispostaMessaggio() e però non va bene fino in fondo (1 msg lo nasconde sotto)
         eliminaMessaggio(index) {
             this.contacts[this.counter].messages.splice(index, 1);
