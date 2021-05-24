@@ -51,7 +51,7 @@
                     <div class="lista_contatti">
                         <div class="d-flex align-items-center contatto position-relative" v-for="(contact, index) in contacts" @click="selezionaChat(index)" v-if="(contact.name.toLowerCase().includes(cerca.toLowerCase()) || cerca == '')">
                             <img :src="'./assets/img/avatar' + contact.avatar + '.jpg'">
-                            <span class="d-flex flex-column">
+                            <span class="d-flex flex-column" id="puntini">
                                 <h5>{{contact.name}}</h5>
                                 <span>{{contact.messages[contact.messages.length - 1].text}}</span>
                             </span>
@@ -87,10 +87,10 @@
                 <!-- main -->
                 <div id="main" class="main">
                     <div class="messaggio d-flex position-relative" v-for="(message, index) in contacts[counter].messages" :class="(message.status == 'sent') ? 'justify-content-end' : 'justify-content-start'" v-if="message.status !== 'avviso'">
-                        <div class="position-relative" :class="message.status" @mouseleave="mostraOpzioni = false">
+                        <div class="position-relative msg" :class="message.status" @mouseleave="mostraOpzioni = false">
                             {{message.text}}
                             <span class="position-absolute data_ora">{{message.date}}</span>
-                            <span @click="mostraOpzioni = true" v-if="(message.status != 'avviso')"><i class="fas fa-chevron-down menu_opzioni_msg position-absolute"></i></span>
+                            <span v-if="(message.status != 'avviso')"><i class="fas fa-chevron-down menu_opzioni_msg position-absolute" @click="mostraOpzioni = true"></i></span>
                             <div class="opzioni_messaggi position-absolute" v-show="mostraOpzioni"><!-- v-show="'mostraOpzioni' + index" -->
                                 <div class="h-50 d-flex justify-content-center align-items-center">Message info</div>
                                 <div class="h-50 d-flex justify-content-center align-items-center" @click="eliminaMessaggio(index)">Delete message</div>

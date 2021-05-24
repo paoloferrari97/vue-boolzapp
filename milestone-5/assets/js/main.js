@@ -191,14 +191,5 @@ const app = new Vue({
             this.contacts[this.counter].messages.splice(index, 1);
             this.mostraOpzioni = false;
         }
-    },
-    mounted() {
-        /* if (contacts[i].messages.length == 0) {
-            contacts[i].messages.push({
-                date: data,
-                text: "Nessun messaggio con questa persona!",
-                status: 'avviso'
-            });
-        } */
     }
 });

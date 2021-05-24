@@ -105,6 +105,11 @@ body {
   top: 5px;
   right: 5px;
   color: #c6cee2;
+  display: none;
+}
+
+.msg:hover .menu_opzioni_msg {
+  display: block;
 }
 
 .top_bar {
