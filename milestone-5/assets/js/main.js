@@ -151,8 +151,7 @@ const app = new Vue({
             name: "Tu",
             avatar: "_io",
             visible: true
-        },
-        mostraOpzioni: false
+        }
         
     },
     methods: {
@@ -189,7 +188,13 @@ const app = new Vue({
         }, //Funziona solo se la richiamo in inviaMessaggio() o rispostaMessaggio() e però non va bene fino in fondo (1 msg lo nasconde sotto)
         eliminaMessaggio(index) {
             this.contacts[this.counter].messages.splice(index, 1);
-            this.mostraOpzioni = false;
+            document.querySelector(`#opz${index} > div`).style.display = "none";
+        },
+        apriOpzioni(index) {
+            document.querySelector(`#opz${index} > div`).style.display = "block";
+        },
+        chiudiOpzioni(index) {
+            document.querySelector(`#opz${index} > div`).style.display = "none";
         }
     }
 });

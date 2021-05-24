@@ -113,10 +113,6 @@ body {
   display: block;
 }
 
-.msg:hover .opzioni_messaggi {
-  display: block;
-}
-
 .top_bar {
   background-color: #eaeaea;
   border-left: 0.5px solid #dedede;
