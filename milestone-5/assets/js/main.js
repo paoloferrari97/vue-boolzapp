@@ -45,6 +45,11 @@ const app = new Vue({
                 visible: true,
                 messages: [
                     {
+                        date: '',
+                        text: "Nessun messaggio!",
+                        status: "avviso"
+                    },
+                    {
                         date: '10/01/2020 15:30:55',
                         text: 'Hai portato a spasso il cane?',
                         status: 'sent'
@@ -66,6 +71,11 @@ const app = new Vue({
                 avatar: '_2',
                 visible: true,
                 messages: [
+                    {
+                        date: '',
+                        text: "Nessun messaggio!",
+                        status: "avviso"
+                    },
                     {
                         date: '20/03/2020 16:30:00',
                         text: 'Ciao come stai?',
@@ -90,6 +100,11 @@ const app = new Vue({
                 visible: true,
                 messages: [
                     {
+                        date: '',
+                        text: "Nessun messaggio!",
+                        status: "avviso"
+                    },
+                    {
                         date: '28/03/2020 10:10:40',
                         text: 'La Marianna va in campagna',
                         status: 'received'
@@ -111,6 +126,11 @@ const app = new Vue({
                 avatar: '_4',
                 visible: true,
                 messages: [
+                    {
+                        date: '',
+                        text: "Nessun messaggio!",
+                        status: "avviso"
+                    },
                     {
                         date: '10/01/2020 15:30:55',
                         text: 'Lo sai che ha aperto una nuova pizzeria?',
@@ -171,5 +191,14 @@ const app = new Vue({
             this.contacts[this.counter].messages.splice(index, 1);
             this.mostraOpzioni = false;
         }
+    },
+    mounted() {
+        /* if (contacts[i].messages.length == 0) {
+            contacts[i].messages.push({
+                date: data,
+                text: "Nessun messaggio con questa persona!",
+                status: 'avviso'
+            });
+        } */
     }
 });

@@ -86,11 +86,11 @@
 
                 <!-- main -->
                 <div id="main" class="main">
-                    <div class="messaggio d-flex position-relative" v-for="(message, index) in contacts[counter].messages" :class="(message.status == 'sent') ? 'justify-content-end' : 'justify-content-start'">
+                    <div class="messaggio d-flex position-relative" v-for="(message, index) in contacts[counter].messages" :class="(message.status == 'sent') ? 'justify-content-end' : 'justify-content-start'" v-if="message.status !== 'avviso'">
                         <div class="position-relative" :class="message.status" @mouseleave="mostraOpzioni = false">
                             {{message.text}}
                             <span class="position-absolute data_ora">{{message.date}}</span>
-                            <span><i class="fas fa-chevron-down menu_opzioni_msg position-absolute" @click="mostraOpzioni = true"></i></span>
+                            <span @click="mostraOpzioni = true" v-if="(message.status != 'avviso')"><i class="fas fa-chevron-down menu_opzioni_msg position-absolute"></i></span>
                             <div class="opzioni_messaggi position-absolute" v-show="mostraOpzioni"><!-- v-show="'mostraOpzioni' + index" -->
                                 <div class="h-50 d-flex justify-content-center align-items-center">Message info</div>
                                 <div class="h-50 d-flex justify-content-center align-items-center" @click="eliminaMessaggio(index)">Delete message</div>
