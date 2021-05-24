@@ -157,6 +157,7 @@ const app = new Vue({
     methods: {
         selezionaChat(index) {
             this.counter = index;
+            this.updateScroll();
         },
         inviaMessaggio(event) {
             const d = new Date();
@@ -170,6 +171,7 @@ const app = new Vue({
                 this.nuovoMessaggio = "";
                 this.rispostaMessaggio();
             }
+            this.updateScroll();
         },
         rispostaMessaggio() {
             setTimeout(() => {
@@ -181,6 +183,7 @@ const app = new Vue({
                     status: 'received'
                 });
             }, 1000);
+            this.updateScroll();
         },
         updateScroll(){
             var element = document.getElementById("main");
