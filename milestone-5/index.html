@@ -49,12 +49,13 @@
                         <input type="text" placeholder="Cerca o inizia una nuova chat" v-model="cerca">
                     </div>
                     <div class="lista_contatti">
-                        <div class="d-flex align-items-center contatto" v-for="(contact, index) in contacts" @click="selezionaChat(index)" v-if="(contact.name.toLowerCase().includes(cerca.toLowerCase()) || cerca == '')">
+                        <div class="d-flex align-items-center contatto position-relative" v-for="(contact, index) in contacts" @click="selezionaChat(index)" v-if="(contact.name.toLowerCase().includes(cerca.toLowerCase()) || cerca == '')">
                             <img :src="'./assets/img/avatar' + contact.avatar + '.jpg'">
                             <span class="d-flex flex-column">
                                 <h5>{{contact.name}}</h5>
                                 <span>{{contact.messages[contact.messages.length - 1].text}}</span>
                             </span>
+                            <div class="position-absolute">{{contact.messages[contact.messages.length - 1].date}}</div>
                         </div>
                     </div>
                 </div>

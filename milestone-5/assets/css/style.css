@@ -262,3 +262,10 @@ body {
   overflow-x: hidden;
   max-width: 200px;
 }
+
+.contatto > div {
+  color: #b1b1b2;
+  top: 10px;
+  right: 5px;
+  font-size: 13px;
+}
