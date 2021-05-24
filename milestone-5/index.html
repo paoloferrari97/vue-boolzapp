@@ -102,7 +102,7 @@
 
                 <!-- bottom bar -->
                 <div class="bottom_bar d-flex justify-content-around align-items-center">
-                    <i class="far fa-smile"></i>
+                    <i class="far fa-smile" @click="smileFace()"></i>
                     <input type="text" placeholder="Scrivi un messaggio" v-model="nuovoMessaggio" @keyup="inviaMessaggio">
                     <i class="fas fa-microphone"></i>
                 </div>

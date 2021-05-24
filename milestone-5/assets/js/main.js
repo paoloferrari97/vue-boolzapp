@@ -200,6 +200,9 @@ const app = new Vue({
         },
         chiudiOpzioni(index) {
             document.querySelector(`#opz${index} > div`).style.display = "none";
+        },
+        smileFace() {
+            this.nuovoMessaggio += "😀";
         }
     }
 });
