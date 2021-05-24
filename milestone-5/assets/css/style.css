@@ -264,9 +264,9 @@ body {
 
 .contatto > span > span {
   color: #b1b1b2;
-  white-space: pre;
+  white-space: nowrap;
   overflow-x: hidden;
-  max-width: 200px;
+  width: 200px;
 }
 
 .contatto > div {
