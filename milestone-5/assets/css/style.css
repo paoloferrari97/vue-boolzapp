@@ -40,7 +40,6 @@ body {
 .bottom_bar,
 .user_name,
 .notifiche {
-  /* height: 15%; */
   height: calc(20vh - 50px);
 }
 
@@ -66,30 +65,26 @@ body {
   display: none;
 }
 
-.sent {
-  background-color: #d5f9ba;
+.sent,
+.received {
   display: inline-block;
   border-radius: 10px;
   padding: 20px;
   font-weight: 600;
   margin-bottom: 20px;
-  margin-right: 10%;
   min-width: 200px;
   max-width: 400px;
   word-wrap: break-word;
 }
 
+.sent {
+  background-color: #d5f9ba;
+  margin-right: 10%;
+}
+
 .received {
   background-color: white;
-  display: inline-block;
-  border-radius: 10px;
-  padding: 20px;
-  font-weight: 600;
-  margin-bottom: 20px;
   margin-left: 10%;
-  min-width: 200px;
-  max-width: 400px;
-  word-wrap: break-word;
 }
 
 .data_ora {
@@ -107,6 +102,14 @@ body {
   right: 5px;
   color: #c6cee2;
   display: none;
+}
+
+.msg.sent:hover {
+  background-color: #d3f3ba;
+}
+
+.msg.received:hover {
+  background-color: rgb(244, 244, 244);
 }
 
 .msg:hover .menu_opzioni_msg {
