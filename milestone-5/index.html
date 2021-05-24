@@ -51,7 +51,10 @@
                     <div class="lista_contatti">
                         <div class="d-flex align-items-center contatto" v-for="(contact, index) in contacts" @click="selezionaChat(index)" v-if="(contact.name.toLowerCase().includes(cerca.toLowerCase()) || cerca == '')">
                             <img :src="'./assets/img/avatar' + contact.avatar + '.jpg'">
-                            <h5>{{contact.name}}</h5>
+                            <span class="d-flex flex-column">
+                                <h5>{{contact.name}}</h5>
+                                <span>{{contact.messages[contact.messages.length - 1].text}}</span>
+                            </span>
                         </div>
                     </div>
                 </div>

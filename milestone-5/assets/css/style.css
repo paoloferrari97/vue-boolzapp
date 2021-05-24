@@ -255,3 +255,10 @@ body {
 .contatto:hover {
   background-color: #e9ebeb;
 }
+
+.contatto > span > span {
+  color: #b1b1b2;
+  white-space: pre;
+  overflow-x: hidden;
+  max-width: 200px;
+}
