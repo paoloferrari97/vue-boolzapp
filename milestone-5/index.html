@@ -91,7 +91,7 @@
                             {{message.text}}
                             <span class="position-absolute data_ora">{{message.date}}</span>
                             <span v-if="(message.status != 'avviso')"><i class="fas fa-chevron-down menu_opzioni_msg position-absolute" @click="mostraOpzioni = true"></i></span>
-                            <div class="opzioni_messaggi position-absolute" v-show="mostraOpzioni"><!-- v-show="'mostraOpzioni' + index" -->
+                            <div class="opzioni_messaggi position-absolute"><!-- v-show="mostraOpzioni" -->
                                 <div class="h-50 d-flex justify-content-center align-items-center">Message info</div>
                                 <div class="h-50 d-flex justify-content-center align-items-center" @click="eliminaMessaggio(index)">Delete message</div>
                             </div>
