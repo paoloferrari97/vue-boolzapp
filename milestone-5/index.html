@@ -53,7 +53,7 @@
                             <img :src="'./assets/img/avatar' + contact.avatar + '.jpg'">
                             <span class="d-flex flex-column" id="puntini">
                                 <h5>{{contact.name}}</h5>
-                                <span>{{contact.messages[contact.messages.length - 1].text}}</span>                         
+                                <span class="ultimo_msg">{{contact.messages[contact.messages.length - 1].text}}</span>                         
                             </span>
                             <div class="position-absolute">{{contact.messages[contact.messages.length - 1].date}}</div>
                         </div>

@@ -204,5 +204,8 @@ const app = new Vue({
         smileFace() {
             this.nuovoMessaggio += "😀";
         }
+    },
+    mounted() {
+        document.querySelectorAll(".ultimo_msg").slice(0, 30) + ' ...';
     }
 });
