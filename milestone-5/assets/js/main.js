@@ -169,9 +169,9 @@ const app = new Vue({
                     status: 'sent'
                 });
                 this.nuovoMessaggio = "";
+                this.updateScroll();
                 this.rispostaMessaggio();
             }
-            this.updateScroll();
         },
         rispostaMessaggio() {
             setTimeout(() => {
@@ -182,12 +182,14 @@ const app = new Vue({
                     text: "Ok",
                     status: 'received'
                 });
+                this.updateScroll();
             }, 1000);
-            this.updateScroll();
         },
-        updateScroll(){
-            var element = document.getElementById("main");
-            element.scrollTop = element.scrollHeight;
+        updateScroll() {
+            setTimeout(() => {
+                var element = document.getElementById("main");
+                element.scrollTop = element.scrollHeight;
+            }, 1000);
         }, //Funziona solo se la richiamo in inviaMessaggio() o rispostaMessaggio() e però non va bene fino in fondo (1 msg lo nasconde sotto)
         eliminaMessaggio(index) {
             this.contacts[this.counter].messages.splice(index, 1);
