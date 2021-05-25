@@ -203,6 +203,40 @@ const app = new Vue({
         },
         smileFace() {
             this.nuovoMessaggio += "😀";
+        },
+        catturaAudio() {
+            document.querySelector(".fas.fa-microphone").style.color = "red";
+                navigator.mediaDevices.getUserMedia({ audio: true })
+                .then(stream => {
+                mediaRecorder = new MediaRecorder(stream);
+                mediaRecorder.start();
+
+                const audioChunks = [];
+                mediaRecorder.addEventListener("dataavailable", event => {
+                    audioChunks.push(event.data);
+                });
+
+                mediaRecorder.addEventListener("stop", () => {
+                    const audioBlob = new Blob(audioChunks);
+                    const audioUrl = URL.createObjectURL(audioBlob);
+                    const audio = new Audio(audioUrl);
+                    audio.play();
+                    let data = dayjs().format("DD/MM/YYYY HH:mm:ss");
+                    this.contacts[this.counter].messages.push({
+                        date: data,
+                        text: audio,
+                        status: 'audio_sent'
+                    });
+                    console.log(audioUrl);
+                    this.updateScroll();
+                    this.rispostaMessaggio();
+                });
+
+                setTimeout(() => {
+                    mediaRecorder.stop();
+                    document.querySelector(".fas.fa-microphone").style.color = "#6b7376";
+                }, 3000);                     
+            });
         }
     }
 });
