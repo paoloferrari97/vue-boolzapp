@@ -88,20 +88,7 @@
                 <div id="main" class="main">
                     <div class="messaggio d-flex position-relative" v-for="(message, index) in contacts[counter].messages" :class="(message.status == 'received') ? 'justify-content-start' : 'justify-content-end'" v-if="message.status !== 'avviso'">
                         <div class="position-relative msg" :class="message.status" :id="'opz' + index" @mouseleave="chiudiOpzioni(index)" v-if="message.status != 'audio_sent'">
-                            {{message.text}}
-                            <span class="position-absolute data_ora">{{message.date}}</span>
-                            <span @click="apriOpzioni(index)" v-if="(message.status != 'avviso')"><i class="fas fa-chevron-down menu_opzioni_msg position-absolute"></i></span>
-                            <div class="opzioni_messaggi position-absolute">
-                                <div class="h-50 d-flex justify-content-center align-items-center">Message info</div>
-                                <div class="h-50 d-flex justify-content-center align-items-center" @click="eliminaMessaggio(index)">Delete message</div>
-                            </div>
-                        </div>
-                        <div class="position-relative msg" :class="message.status" :id="'opz' + index" @mouseleave="chiudiOpzioni(index)" v-else>
-                            <audio controls>
-                                <source src="app.contacts[counter].messages[index].text" type="audio/ogg">
-                                <source src="app.contacts[counter].messages[index].text" type="audio/mpeg">
-                                Your browser does not support the audio element.
-                            </audio>
+                            <span :id="'voc' + index">{{message.text}}</span>
                             <span class="position-absolute data_ora">{{message.date}}</span>
                             <span @click="apriOpzioni(index)" v-if="(message.status != 'avviso')"><i class="fas fa-chevron-down menu_opzioni_msg position-absolute"></i></span>
                             <div class="opzioni_messaggi position-absolute">

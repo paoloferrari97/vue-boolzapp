@@ -151,7 +151,8 @@ const app = new Vue({
             name: "Tu",
             avatar: "_io",
             visible: true
-        }
+        },
+        record: "record"
         
     },
     methods: {
@@ -205,38 +206,48 @@ const app = new Vue({
             this.nuovoMessaggio += "😀";
         },
         catturaAudio() {
-            document.querySelector(".fas.fa-microphone").style.color = "red";
-                navigator.mediaDevices.getUserMedia({ audio: true })
-                .then(stream => {
-                mediaRecorder = new MediaRecorder(stream);
-                mediaRecorder.start();
+            if (this.record === "record") {
 
-                const audioChunks = [];
-                mediaRecorder.addEventListener("dataavailable", event => {
-                    audioChunks.push(event.data);
-                });
+                document.querySelector(".fas.fa-microphone").style.color = "red";
 
-                mediaRecorder.addEventListener("stop", () => {
-                    const audioBlob = new Blob(audioChunks);
-                    const audioUrl = URL.createObjectURL(audioBlob);
-                    const audio = new Audio(audioUrl);
-                    audio.play();
-                    let data = dayjs().format("DD/MM/YYYY HH:mm:ss");
+                document.querySelector(".bottom_bar > input").disabled = true;
+
+                navigator.mediaDevices.getUserMedia({ audio: true }).then(stream => {
+                    
                     this.contacts[this.counter].messages.push({
-                        date: data,
-                        text: audio,
-                        status: 'audio_sent'
+                        date: dayjs().format("DD/MM/YYYY  HH:mm:ss"),
+                        text: "",
+                        status: "sent"
                     });
-                    console.log(audioUrl);
-                    this.updateScroll();
-                    this.rispostaMessaggio();
-                });
 
-                setTimeout(() => {
-                    mediaRecorder.stop();
-                    document.querySelector(".fas.fa-microphone").style.color = "#6b7376";
-                }, 3000);                     
-            });
+                    mediaRecorder = new MediaRecorder(stream);
+                    mediaRecorder.start();
+                    chuck = [];
+
+                    mediaRecorder.addEventListener("dataavailable", e => {
+                        chuck.push(e.data);
+                    })
+
+                    mediaRecorder.addEventListener("stop", e => {
+                        blob = new Blob(chuck);
+                        audio_url = URL.createObjectURL(blob);
+                        audio = new Audio(audio_url);
+                        audio.setAttribute("controls", 1);
+                        let indiceNumero = (this.contacts[this.counter].messages.length - 1).toString();
+                        document.getElementById('voc' + indiceNumero).appendChild(audio);
+                    })
+
+                })
+                this.record = "stop";
+                this.updateScroll();
+            } else {
+                mediaRecorder.stop();
+                this.record = "record";
+                this.rispostaMessaggio();
+                this.updateScroll();
+                document.querySelector(".fas.fa-microphone").style.color = "#6b7376";
+                document.querySelector(".bottom_bar > input").disabled = false;
+            }
         }
     }
 });
