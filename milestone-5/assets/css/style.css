@@ -5,11 +5,18 @@
 }
 
 body {
-  background-image: linear-gradient(
+  /* background-image: linear-gradient(
     to bottom,
     #009688 0px,
     #009688 20vh,
     #dddbd1 20vh,
+    #d2dbdc 100%
+  ); */
+  background-image: linear-gradient(
+    to bottom,
+    #009688 0px,
+    #009688 120px,
+    #dddbd1 120px,
     #d2dbdc 100%
   );
 }
@@ -19,6 +26,8 @@ body {
   width: 100%;
   padding-top: 50px;
   padding-bottom: 50px;
+  max-width: 90vw;
+  max-height: 100vh;
 }
 
 #app {
@@ -40,7 +49,7 @@ body {
 .bottom_bar,
 .user_name,
 .notifiche {
-  height: calc(20vh - 50px);
+  height: calc(70px);
 }
 
 .main,
@@ -52,6 +61,7 @@ body {
   background-image: url("../img/mine.jpg");
   padding-top: 30px;
   overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .opzioni_messaggi {
@@ -69,22 +79,24 @@ body {
 .received {
   display: inline-block;
   border-radius: 10px;
-  padding: 20px;
+  /* padding: 20px; */
+  padding: 5px;
   font-weight: 600;
   margin-bottom: 20px;
-  min-width: 200px;
-  max-width: 400px;
+  /* min-width: 200px; */
+  /* max-width: 400px; */
   word-wrap: break-word;
+  max-width: 100%;
 }
 
 .sent {
   background-color: #d5f9ba;
-  margin-right: 10%;
+  /* margin-right: 10%; */
 }
 
 .received {
   background-color: white;
-  margin-left: 10%;
+  /* margin-left: 10%; */
 }
 
 .data_ora {
@@ -93,6 +105,7 @@ body {
   bottom: 5px;
   right: 5px;
   color: #c6cee2;
+  display: none;
 }
 
 .menu_opzioni_msg {
@@ -129,16 +142,19 @@ body {
   height: 80%;
   border-radius: 50%;
   margin: 0 10px;
+  display: none;
 }
 
 .top_bar > span > span > span {
   color: #73838e;
+  display: none;
 }
 
 .top_bar > span > i {
   color: #b1b1b2;
   font-size: 25px;
   margin-right: 20px;
+  display: none;
 }
 
 .bottom_bar {
@@ -147,8 +163,10 @@ body {
 
 .bottom_bar > i {
   color: #6b7376;
-  font-size: 30px;
-  margin: 0 20px;
+  /* font-size: 30px; */
+  font-size: 15px;
+  /* margin: 0 20px; */
+  margin: 0 10px;
 }
 
 .bottom_bar > input {
@@ -173,6 +191,12 @@ body {
   height: 80%;
   border-radius: 50%;
   margin: 0 10px;
+  display: none;
+}
+
+.user_name > span:nth-child(2),
+.user_name > span:nth-child(2) > i {
+  display: none;
 }
 
 .user_name > span > span > span {
@@ -215,6 +239,10 @@ body {
   color: #73838e;
 }
 
+.notifiche > span:nth-child(2) {
+  display: none;
+}
+
 .contatti {
   background-color: white;
 }
@@ -226,12 +254,14 @@ body {
 
 .cerca_contatto > div:first-child {
   height: 70%;
-  width: 40px;
+  /* width: 40px; */
+  width: 20px;
   background-color: white;
 }
 
 .cerca_contatto > div:first-child > i {
-  font-size: 20px;
+  /* font-size: 20px; */
+  font-size: 10px;
   color: #b1b1b2;
 }
 
@@ -251,14 +281,17 @@ body {
   padding-top: 10px;
   padding-bottom: 10px;
   border-top: 1px solid #fafafa;
+  /* justify-content: center; */
 }
 
 .lista_contatti > div > img {
+  min-width: 55px;
   height: 55px;
   border-radius: 50%;
   margin-left: 20px;
   margin-right: 20px;
   overflow-y: auto;
+  display: none;
 }
 
 .contatto:hover {
@@ -270,6 +303,7 @@ body {
   white-space: nowrap;
   overflow-x: hidden;
   width: 200px;
+  display: none;
 }
 
 .contatto > div {
@@ -277,4 +311,170 @@ body {
   top: 10px;
   right: 5px;
   font-size: 13px;
+  display: none;
+}
+
+.contatto {
+  padding-left: 5px;
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+  .user_name > span > img,
+  .user_name > span:nth-child(2),
+  .top_bar > span > img,
+  .top_bar > span > i,
+  .data_ora {
+    display: block;
+  }
+  /* .lista_contatti > div {
+    justify-content: flex-start;
+  } */
+  .sent,
+  .received {
+    min-width: 200px;
+    max-width: 400px;
+    padding: 20px;
+  }
+  .sent {
+    margin-right: 10%;
+  }
+  .received {
+    margin-left: 10%;
+  }
+  .cerca_contatto > div:first-child {
+    width: 40px;
+  }
+  .cerca_contatto > div:first-child > i {
+    font-size: 20px;
+  }
+  .bottom_bar > i {
+    margin: 0 20px;
+    font-size: 30px;
+  }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  .contatto > span > span,
+  .top_bar > span > img,
+  .top_bar > span > span > span,
+  .top_bar > span > i,
+  .data_ora {
+    display: block;
+  }
+  /* .lista_contatti > div {
+    justify-content: flex-start;
+  } */
+  .sent,
+  .received {
+    min-width: 200px;
+    max-width: 400px;
+    padding: 20px;
+  }
+  .sent {
+    margin-right: 10%;
+  }
+  .received {
+    margin-left: 10%;
+  }
+  .cerca_contatto > div:first-child {
+    width: 40px;
+  }
+  .cerca_contatto > div:first-child > i {
+    font-size: 20px;
+  }
+  .bottom_bar > i {
+    margin: 0 20px;
+    font-size: 30px;
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  .contatto > span > span,
+  .lista_contatti > div > img,
+  .notifiche > span:nth-child(2),
+  .user_name > span > img,
+  .user_name > span:nth-child(2),
+  .user_name > span:nth-child(2) > i,
+  .top_bar > span > img,
+  .top_bar > span > span > span,
+  .top_bar > span > i,
+  .data_ora {
+    display: block;
+  }
+  /* .lista_contatti > div {
+    justify-content: flex-start;
+  } */
+  .sent,
+  .received {
+    min-width: 200px;
+    max-width: 400px;
+    padding: 20px;
+  }
+  .sent {
+    margin-right: 10%;
+  }
+  .received {
+    margin-left: 10%;
+  }
+  .cerca_contatto > div:first-child {
+    width: 40px;
+  }
+  .cerca_contatto > div:first-child > i {
+    font-size: 20px;
+  }
+  .bottom_bar > i {
+    margin: 0 20px;
+    font-size: 30px;
+  }
+  .contatto {
+    padding-left: 0;
+  }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .contatto > div,
+  .contatto > span > span,
+  .lista_contatti > div > img,
+  .notifiche > span:nth-child(2),
+  .user_name > span > img,
+  .user_name > span:nth-child(2),
+  .user_name > span:nth-child(2) > i,
+  .top_bar > span > img,
+  .top_bar > span > span > span,
+  .top_bar > span > i,
+  .data_ora {
+    display: block;
+  }
+  /* .lista_contatti > div {
+    justify-content: flex-start;
+  } */
+  .sent,
+  .received {
+    min-width: 200px;
+    max-width: 400px;
+    padding: 20px;
+  }
+  .sent {
+    margin-right: 10%;
+  }
+  .received {
+    margin-left: 10%;
+  }
+  .cerca_contatto > div:first-child {
+    width: 40px;
+  }
+  .cerca_contatto > div:first-child > i {
+    font-size: 20px;
+  }
+  .bottom_bar > i {
+    margin: 0 20px;
+    font-size: 30px;
+  }
+  .contatto {
+    padding-left: 0;
+  }
 }
