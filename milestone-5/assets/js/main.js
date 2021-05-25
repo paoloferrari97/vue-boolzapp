@@ -160,9 +160,10 @@ const app = new Vue({
             this.updateScroll();
         },
         inviaMessaggio(event) {
-            const d = new Date();
-            let data = d.getDate() + "/" + (d.getMonth() + 1) + "/" + d.getFullYear() + " " + d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds();
-            if (event.key == "Enter" && this.nuovoMessaggio != "") {
+            
+            let data = dayjs().format("DD/MM/YYYY HH:mm:ss");
+
+            if (this.nuovoMessaggio != "") {
                 this.contacts[this.counter].messages.push({
                     date: data,
                     text: this.nuovoMessaggio,
@@ -175,8 +176,7 @@ const app = new Vue({
         },
         rispostaMessaggio() {
             setTimeout(() => {
-                const d = new Date();
-                let data = d.getDate() + "/" + (d.getMonth() + 1) + "/" + d.getFullYear() + " " + d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds();
+                let data = dayjs().format("DD/MM/YYYY HH:mm:ss");
                 this.contacts[this.counter].messages.push({
                     date: data,
                     text: "Ok",
